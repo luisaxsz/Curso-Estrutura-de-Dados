@@ -106,4 +106,19 @@ public class Vetor {
 		}
 		return -1;// posicao nao existente
 	}
+	
+	//B D E F F -> POSICAO REMOVIDA 1
+	//0 1 2 3 4 -> TAMANHO E 5 
+	//VETOR[1] = VETOR[2]
+	//VETOR[2] = VETOR[3]
+	public void remover(int posicao) {
+		if (!(posicao >= 0 && posicao < tamanho)) {
+			throw new IllegalArgumentException("Posicao invalida");
+		}
+		
+		for (int i = posicao - 1; i <= tamanho-1; i++) {
+			this.elementos[i] = this.elementos[i+1];
+		}
+		tamanho--;
+	}
 }
