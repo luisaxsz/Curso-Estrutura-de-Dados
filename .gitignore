@@ -1,0 +1,7 @@
+/.metadata/
+VetoresListas/.classpath
+VetoresListas/.project
+VetoresListas/.settings/org.eclipse.core.resources.prefs
+VetoresListas/.settings/org.eclipse.jdt.core.prefs
+VetoresListas/src/module-info.java
+*.class
