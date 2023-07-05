@@ -1,18 +1,16 @@
 package Vetor;
 
-import java.util.Arrays;
-
-public class Vetor {
-	private String[] elementos;
+public class VetorObject {
+	private Object[] elementos;
 	private int tamanho;
 
-	public Vetor(int capacidade) {
-		this.elementos = new String[capacidade];
+	public VetorObject(int capacidade) {
+		this.elementos = new Object[capacidade];
 		this.tamanho = 0;
 	}
 
 	// Adicionar elemento a qualquer posicao
-	public boolean adicionar(String elemento, int posicao) {
+	public boolean adicionar(Object elemento, int posicao) {
 		if (!(posicao >= 0 && posicao < tamanho)) {
 			throw new IllegalArgumentException("Posicao invalida");
 		}
@@ -29,7 +27,7 @@ public class Vetor {
 
 	private void aumentaCapacidade() {
 		if (this.tamanho == this.elementos.length) {
-			String[] elementosNovos = new String[this.elementos.length * 2];
+			Object[] elementosNovos = new Object[this.elementos.length * 2];
 			for (int i = 0; i < this.elementos.length; i++) {
 				elementosNovos[i] = this.elementos[i];
 			}
@@ -38,7 +36,7 @@ public class Vetor {
 		}
 	}
 
-	public void adicionar(String elemento) throws Exception {
+	public void adicionar(Object elemento) throws Exception {
 		this.aumentaCapacidade();
 		if (this.tamanho < this.elementos.length) {
 			this.elementos[this.tamanho] = elemento;
@@ -48,13 +46,7 @@ public class Vetor {
 		}
 	}
 
-	/*
-	 * public void adiciona(String elemento) { for (int i = 0; i < elementos.length;
-	 * i++) { if (this.elementos[i] == null) { this.elementos[i] = elemento; break;
-	 * } } }
-	 */
-
-	public boolean adiciona(String elemento) {
+	public boolean adiciona(Object elemento) {
 		if (this.tamanho < this.elementos.length) {
 			this.elementos[this.tamanho] = elemento;
 			tamanho++;
@@ -85,19 +77,9 @@ public class Vetor {
 		return s.toString();
 	}
 
-	// Método que busca elemento de determinada posicao
-
-	/*
-	 * public String busca(int posicao) throws Exception { if(!(posicao >= 0 &&
-	 * posicao < tamanho)){ throw new IllegalArgumentException("Posicao invalida");
-	 * }
-	 * 
-	 * return this.elementos[posicao]; }
-	 */
-
 	// Metodo que verifica se elemento está no array
 
-	public int busca(String elemento) {
+	public int busca(Object elemento) {
 		// Busca sequencial
 		for (int i = 0; i < this.tamanho; i++) {
 			if (this.elementos[i].equals(elemento)) {
@@ -106,19 +88,20 @@ public class Vetor {
 		}
 		return -1;// posicao nao existente
 	}
-	
-	//B D E F F -> POSICAO REMOVIDA 1
-	//0 1 2 3 4 -> TAMANHO E 5 
-	//VETOR[1] = VETOR[2]
-	//VETOR[2] = VETOR[3]
+
+	// B D E F F -> POSICAO REMOVIDA 1
+	// 0 1 2 3 4 -> TAMANHO E 5
+	// VETOR[1] = VETOR[2]
+	// VETOR[2] = VETOR[3]
 	public void remover(int posicao) {
 		if (!(posicao >= 0 && posicao < tamanho)) {
 			throw new IllegalArgumentException("Posicao invalida");
 		}
-		
-		for (int i = posicao; i <= this.tamanho-1; i++) {
-			this.elementos[i] = this.elementos[i+1];
+
+		for (int i = posicao; i <= this.tamanho - 1; i++) {
+			this.elementos[i] = this.elementos[i + 1];
 		}
 		this.tamanho--;
 	}
+
 }
