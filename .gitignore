@@ -5,3 +5,8 @@ VetoresListas/.settings/org.eclipse.core.resources.prefs
 VetoresListas/.settings/org.eclipse.jdt.core.prefs
 VetoresListas/src/module-info.java
 *.class
+ExercicioEstruturaDados/.classpath
+ExercicioEstruturaDados/.project
+ExercicioEstruturaDados/.settings/org.eclipse.jdt.core.prefs
+ExercicioEstruturaDados/.settings/org.eclipse.core.resources.prefs
+ExercicioEstruturaDados/src/module-info.java
