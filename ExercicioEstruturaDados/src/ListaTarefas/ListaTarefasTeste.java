@@ -5,7 +5,8 @@ import java.util.Scanner;
 
 public class ListaTarefasTeste {
 	public static void main(String[] args) {
-		ArrayList<ListaTarefas> listaTarefas = new ArrayList<ListaTarefas>(5);
+		ArrayList<ListaTarefas> listaTarefas = new ArrayList<ListaTarefas>();
+		
 		adicionarTarefa(5, listaTarefas);
 		mostrarLista(listaTarefas);
 		removerTarefa(0,listaTarefas);
