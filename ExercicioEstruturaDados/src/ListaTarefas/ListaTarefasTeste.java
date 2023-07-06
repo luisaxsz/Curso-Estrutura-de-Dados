@@ -10,6 +10,7 @@ public class ListaTarefasTeste {
 		mostrarLista(listaTarefas);
 		removerTarefa(0,listaTarefas);
 		mostrarLista(listaTarefas);
+		limparLista(listaTarefas);
 	}
 
 	public static void adicionarTarefa(int quantidade, ArrayList<ListaTarefas> listaTarefas) {
@@ -40,5 +41,9 @@ public class ListaTarefasTeste {
 			System.out.println(tarefas);
 			tamanho++;
 		}
+	}
+	
+	public static void limparLista(ArrayList<ListaTarefas> listaTarefas) {
+		listaTarefas.clear();
 	}
 }
