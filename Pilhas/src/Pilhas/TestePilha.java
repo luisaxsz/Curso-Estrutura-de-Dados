@@ -20,6 +20,9 @@ public class TestePilha {
 		System.out.println(novaPilha.estaVazia());
 		//Mostra o valor do topo da pilha
 		System.out.println(novaPilha.topo());
+		//Desempilha o ultimo valor
+		novaPilha.desempilha();
+		System.out.println(novaPilha);
 	}
 
 }
