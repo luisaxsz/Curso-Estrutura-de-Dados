@@ -22,18 +22,21 @@ public class EstruturaEstatica<T> {
 		return false;
 	}
 
-	protected boolean adicionar(T elemento, int posicao) {
-		if (!(posicao >= 0 && posicao < tamanho)) {
-			throw new IllegalArgumentException("Posicao invalida");
-		}
-		this.aumentaCapacidade();
-		// Move elementos
-		for (int i = this.tamanho - 1; i >= posicao; i--) {
-			this.elementos[i + 1] = this.elementos[i];
+	protected boolean adiciona(int posicao, T elemento){
+
+		if (posicao < 0 || posicao > tamanho){
+			throw new IllegalArgumentException("Posição inválida");
 		}
 
+		this.aumentaCapacidade();
+
+		//mover todos os elementos
+		for (int i=this.tamanho-1; i>=posicao; i--){
+			this.elementos[i+1] = this.elementos[i];
+		}
 		this.elementos[posicao] = elemento;
 		this.tamanho++;
+
 		return true;
 	}
 
