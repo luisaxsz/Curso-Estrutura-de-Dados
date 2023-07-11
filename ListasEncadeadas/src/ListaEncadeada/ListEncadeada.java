@@ -17,6 +17,20 @@ public class ListEncadeada<T> {
 		this.tamanho++;
 	}
 	
+	public void limparSimples() {
+		this.inicio =null;
+		this.ultimoElemento = null;
+		this.tamanho = 0;
+	}
+	
+	public void limparCorretamente() {
+		for(No<T> atual = this.inicio; atual != null;) {
+			No <T> proximo = atual.getProximo();
+			atual.setElemento(null);
+			atual.setProximo(null);
+			atual = proximo;
+		}
+	}
 	
 	
 	public int getTamanho() {
@@ -31,7 +45,7 @@ public class ListEncadeada<T> {
 		
 		StringBuilder builder = new StringBuilder();
 		No<T> atual = this.inicio;
-		for (int i =0 ; i < this.tamanho-1; i++) {
+		for (int i = 0 ; i < this.tamanho-1; i++) {
 			builder.append(atual.getElemento()).append(",");
 			atual = atual.getProximo();
 		}
@@ -44,6 +58,6 @@ public class ListEncadeada<T> {
 		}*/
 		return builder.toString();
 	}
-	
+	 
 	
 }

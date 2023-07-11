@@ -9,7 +9,8 @@ public class TesteListaEncadeada {
 		lista.adiciona(3);
 		
 		System.out.println(lista);
-		
+		lista.limparCorretamente();
+		System.out.println(lista);
 		
 	}
 }
