@@ -31,10 +31,11 @@ public class ListEncadeada<T> {
 		
 		StringBuilder builder = new StringBuilder();
 		No<T> atual = this.inicio;
-		for (int i =0 ; i < this.tamanho; i++) {
+		for (int i =0 ; i < this.tamanho-1; i++) {
 			builder.append(atual.getElemento()).append(",");
 			atual = atual.getProximo();
 		}
+		builder.append(atual.getElemento());
 		
 		/*builder.append(atual.getElemento()).append(",");
 		while(atual.getProximo() != null) {
